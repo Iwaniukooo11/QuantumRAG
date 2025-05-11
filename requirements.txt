@@ -1,0 +1,22 @@
+# Quantum computing
+qiskit
+qiskit-aer
+
+
+# Web interface
+streamlit
+
+# ML/NLP
+torch
+transformers
+sentence-transformers
+tokenizers==0.13.3
+
+# Vector similarity search
+faiss-cpu
+#faiss-gpu # Uncomment if you have a GPU and want to use it
+
+# Utils
+numpy
+tqdm
+requests
