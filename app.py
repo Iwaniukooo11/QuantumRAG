@@ -1,12 +1,12 @@
 import streamlit as st
 import json
 from context_retriever import ContextRetriever
-#from grover import grover_top_k
+from grover import grover_top_k
 #from gpt_final_answer import generate_answer_from_contexts
 
 MODEL_NAME = 'mixedbread-ai/mxbai-embed-large-v1'
 QUERY_PREFIX = "Represent this sentence for searching relevant passages: "
-TOP_K_FROM_FAISS = 10
+TOP_K_FIRST = 10
 TOP_K_FINAL = 3
 
 EMBEDDINGS_FILE = "saved_embeddings/squad_embeddings_mixedbread_ai_mxbai_embed_large_v1.npy"
@@ -33,15 +33,16 @@ if user_question:
     query = QUERY_PREFIX + user_question
     with st.spinner("Searching for relevant contexts..."):
         # Use the retriever to get the top 10 results
-        top_10_results = retriever.search(query, top_k=TOP_K_FROM_FAISS)
+        top_10_results = retriever.search(query, top_k=TOP_K_FIRST)
 
     if not top_10_results:
         st.error("No relevant contexts found.")
     else:
         with st.spinner("Searching for relevant contexts with Grover..."):
             # Use Grover to get the top k contexts
-            #top_k_contexts = grover_top_k_simulation(top_10_results, k=TOP_K_FINAL)
-            top_k_contexts = ["TODO Ania: implement this function to get top k contexts from Grover"]
+            grover_output = grover_top_k(top_10_results, k=TOP_K_FINAL)
+            top_k_contexts = grover_output["contexts"]
+
 
         with st.spinner("Generating answer..."):
             # Generate the final answer from the top k contexts
@@ -54,14 +55,20 @@ if user_question:
         else:
             st.success("Answer found!")
         st.write(final_answer)
+        st.markdown(f"**Treshold:** {grover_output['threshold']:.4f}")
+
+
 
         with st.expander("Show top 3 contexts"):
-            st.write(top_k_contexts)
-            #for i, ctx in enumerate(top_k_contexts):
-                #st.markdown(f"**Context {i+1} (score: {ctx['similarity_score']:.4f})**")
-                #st.write(ctx["document"])
+            for i, ctx in enumerate(top_k_contexts):
+                st.markdown(f"**Context {i+1} (score: {ctx['similarity_score']:.4f})**")
+                st.write(ctx["document"])
 
         with st.expander("Show all top 10 contexts"):
             for res in top_10_results:
                 st.markdown(f"**Rank {res['rank']} (score: {res['similarity_score']:.4f})**")
                 st.write(res["document"][:500] + "...")
+                
+        st.markdown("### Grover info:")
+        st.markdown(f"**Qiskit version:** {grover_output['qiskit_version']}")
+        st.markdown(f"**Runtime version:** {grover_output['runtime_version']}")
