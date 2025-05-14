@@ -1,9 +1,9 @@
 import streamlit as st
 import json
-from context_retriever import ContextRetriever
-from grover import grover_top_k
+from src.components.ContextRetriever import ContextRetriever
+from src.components.GrooverTopK import GroverTopK
 #from gpt_final_answer import generate_answer_from_contexts
-
+grover_top_k = GroverTopK()
 MODEL_NAME = 'mixedbread-ai/mxbai-embed-large-v1'
 QUERY_PREFIX = "Represent this sentence for searching relevant passages: "
 TOP_K_FIRST = 10
@@ -40,7 +40,8 @@ if user_question:
     else:
         with st.spinner("Searching for relevant contexts with Grover..."):
             # Use Grover to get the top k contexts
-            grover_output = grover_top_k(top_10_results, k=TOP_K_FINAL)
+            # grover_output = grover_top_k(top_10_results, k=TOP_K_FINAL)
+            grover_output=grover_top_k.select(top_10_results, k=TOP_K_FINAL)
             top_k_contexts = grover_output["contexts"]
 
 
