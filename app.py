@@ -1,9 +1,11 @@
 import streamlit as st
 import json
-from context_retriever import ContextRetriever
-from grover import grover_top_k
+import pandas as pd
+from src.components.ContextRetriever import ContextRetriever
+from src.components.GrooverTopK import GroverTopK
+from src.components.AgentHandler import AgentHandler
 #from gpt_final_answer import generate_answer_from_contexts
-
+grover_top_k = GroverTopK()
 MODEL_NAME = 'mixedbread-ai/mxbai-embed-large-v1'
 QUERY_PREFIX = "Represent this sentence for searching relevant passages: "
 TOP_K_FIRST = 10
@@ -40,7 +42,8 @@ if user_question:
     else:
         with st.spinner("Searching for relevant contexts with Grover..."):
             # Use Grover to get the top k contexts
-            grover_output = grover_top_k(top_10_results, k=TOP_K_FINAL)
+            # grover_output = grover_top_k(top_10_results, k=TOP_K_FINAL)
+            grover_output=grover_top_k.select(top_10_results, k=TOP_K_FINAL)
             top_k_contexts = grover_output["contexts"]
 
 
@@ -48,13 +51,33 @@ if user_question:
             # Generate the final answer from the top k contexts
             #final_answer = generate_answer_from_contexts(user_question, top_k_contexts)
             final_answer = "TODO Mateusz: implement this function to get final answer from gpt"
+            agent_handler = AgentHandler()
+            agents_output = agent_handler.compare_all(user_question, top_k_contexts)
+            
 
         st.subheader("Answer:")
-        if final_answer is None:
+        if agents_output is None:
             st.error("No answer found.")
         else:
             st.success("Answer found!")
-        st.write(final_answer)
+        # st.write(final_answer)
+        # Prepare data for DataFrame
+            for model_key, outputs in agents_output.items():
+                with st.expander(f"Model: {model_key}", expanded=True):
+                    col1, col2 = st.columns(2)
+                    
+                    with col1:
+                        st.markdown("**✅ With Context:**")
+                        st.info(outputs["with_context"])
+                    
+                    with col2:
+                        st.markdown("**❓ Without Context:**")
+                        st.warning(outputs["without_context"])
+                    
+                    # Add a small comparison summary
+                    match_percentage = len(set(outputs["with_context"].split()) & set(outputs["without_context"].split())) / max(len(set(outputs["with_context"].split())), len(set(outputs["without_context"].split()))) * 100
+                    st.caption(f"Word overlap: ~{match_percentage:.1f}% similarity between responses")
+        
         st.markdown(f"**Treshold:** {grover_output['threshold']:.4f}")
 
 

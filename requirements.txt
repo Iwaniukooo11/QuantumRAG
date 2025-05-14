@@ -1,7 +1,7 @@
 # Quantum computing
 qiskit
 qiskit-aer
-
+qiskit-ibm-runtime
 
 # Web interface
 streamlit
