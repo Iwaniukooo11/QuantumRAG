@@ -26,8 +26,8 @@ with open(DOCS_LIST_FILE, 'r', encoding='utf-8') as f:
 retriever.build_index(docs)
 
 # Streamlit UI
-st.title("QA with Grover and GPT")
-st.markdown("Ask a question and get an answer using Grover and GPT.")
+st.title("QA with Grover and LLMs")
+st.markdown("Ask a question and get an answer using Grover and LLM.")
 
 user_question = st.text_input("Your question:", placeholder="Type your question here...")
 
