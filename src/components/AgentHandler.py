@@ -17,7 +17,7 @@ class AgentHandler:
         "mixtral-8x7b": ("hf-inference", "mistralai/Mixtral-8x7B-Instruct-v0.1"),
         # "mistral-7b": ("hf-inference", "mistralai/Mistral-7B-Instruct-v0.2"),
         # "phi-3": ("hf-inference", "microsoft/phi-3-medium-4k-instruct"),
-        "gemma-7b": ("hf-inference", "google/gemma-3-27b-it"),
+        "phi-3.5": ("hf-inference", "microsoft/Phi-3.5-mini-instruct"),
     }
 
     def __init__(
