@@ -2,7 +2,7 @@ import streamlit as st
 import json
 import pandas as pd
 from src.components.ContextRetriever import ContextRetriever
-from src.components.GrooverTopK import GroverTopK
+from src.components.GroverTopK import GroverTopK
 from src.components.AgentHandler import AgentHandler
 #from gpt_final_answer import generate_answer_from_contexts
 grover_top_k = GroverTopK()
@@ -49,8 +49,6 @@ if user_question:
 
         with st.spinner("Generating answer..."):
             # Generate the final answer from the top k contexts
-            #final_answer = generate_answer_from_contexts(user_question, top_k_contexts)
-            final_answer = "TODO Mateusz: implement this function to get final answer from gpt"
             agent_handler = AgentHandler()
             agents_output = agent_handler.compare_all(user_question, top_k_contexts)
             
