@@ -1,0 +1,8 @@
+"Œrednia z cosine_similarity do odpowiedzi ""idealnej""",Model,,,
+Wariant,llama-3-8b,mixtral-8x7b,phi-3.5,Œrednia
+grover_top3,0.813,0.622,0.628,0.688
+classic_top3,0.803,0.623,0.626,0.684
+grover_top1,0.748,0.602,0.614,0.655
+classic_top1,0.745,0.601,0.614,0.653
+no_context,0.577,0.545,0.518,0.547
+Œrednia,0.737,0.599,0.600,0.645
