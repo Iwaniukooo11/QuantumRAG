@@ -158,7 +158,7 @@ Wykres wartości średnich cosine_similarity do "idealnych" odpowiedzi:
 Wyniki potwierdzają:
 
 - bardzo dużą zgodność między Groverem a klasyczną selekcją kontekstów,
-- minimalny koszt czasowy użycia Grovera,
+- bardzo niski czas użycia algorytmu Grovera,
 - wyraźny spadek jakości odpowiedzi bez kontekstu (`no_context`) we wszystkich modelach.
 
 
