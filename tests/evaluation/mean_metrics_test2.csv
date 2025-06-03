@@ -1,0 +1,16 @@
+model,variant,cosine,overlap
+llama-3-8b,classic_top1,0.753046429,38.77
+llama-3-8b,classic_top3,0.800580357,46.39839286
+llama-3-8b,grover_top1,0.756453571,38.77
+llama-3-8b,grover_top3,0.802608929,46.47732143
+llama-3-8b,no_context,0.578830357,5.676607143
+mixtral-8x7b,classic_top1,0.595103571,7.736964286
+mixtral-8x7b,classic_top3,0.618498214,9.004642857
+mixtral-8x7b,grover_top1,0.596230357,7.736964286
+mixtral-8x7b,grover_top3,0.631201786,10.68
+mixtral-8x7b,no_context,0.545151786,2.053392857
+phi-3.5,classic_top1,0.617626786,7.622857143
+phi-3.5,classic_top3,0.627676786,7.986964286
+phi-3.5,grover_top1,0.617153571,7.622857143
+phi-3.5,grover_top3,0.6256375,8.600178571
+phi-3.5,no_context,0.518096429,1.104285714
