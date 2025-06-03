@@ -20,46 +20,47 @@ Pełne wyniki (metryki i odpowiedzi dla każdego sprawdzanego wariantu) dostępn
 
 ## Podsumowanie wyników
 Podsumowanie wszystkich metryk dla każdego modelu i wariantu:
-![Podsumowanie wszystkich metryk dla każdego modelu i wariantu.](.\evaluation\results_images\all_metrics_summary.png)
+![Podsumowanie wszystkich metryk](evaluation/results_images/all_metrics_summary.png)
+
 
 Tabela porównująca modele i warianty pod względem średniej cosine_similarity do odpowiedzi "idealnej":
-![Tabela porównująca modele i warianty pod względem średniej cosine_similarity do odpowiedzi "idealnej".](.\evaluation\results_images\cosine_summary_table.png)
+![Tabela porównująca modele i warianty pod względem średniej cosine_similarity do odpowiedzi "idealnej".](evaluation/results_images/cosine_summary_table.png)
 
 Wykres wartości średnich cosine_similarity do "idealnych" odpowiedzi:
-![Wykres wartości średnich cosine_similarity do "idealnych" odpowiedzi.](.\evaluation\results_images\cosine_summary_plot.png)
+![Wykres wartości średnich cosine_similarity do "idealnych" odpowiedzi.](evaluation/results_images/cosine_summary_plot.png)
 
 Tabela porównująca średni czas generowania odpowiedzi (z kontekstem i bez) dla wszystkich 3 modeli w zależnosci od wariantu:
-![Średni czas generowania odpowiedzi (z kontekstem i bez) dla wszystkich 3 modeli.](.\evaluation\results_images\time_summary_table.png)
+![Średni czas generowania odpowiedzi (z kontekstem i bez) dla wszystkich 3 modeli.](evaluation/results_images/time_summary_table.png)
 
 Wykres porównujący średni czas generowania odpowiedzi (z kontekstem i bez) dla wszystkich 3 modeli w zależnosci od wariantu:
-![Wykres wartości średnich czasu generowania odpowiedzi (z kontekstem i bez) dla wszystkich 3 modeli.](.\evaluation\results_images\time_summary_plot.png)
+![Wykres wartości średnich czasu generowania odpowiedzi (z kontekstem i bez) dla wszystkich 3 modeli.](evaluation/results_images/time_summary_plot.png)
 
 # Sprawdzenie działania GUI
 
 ## Strona startowa
 
-![Strona startowa aplikacji.](.\evaluation\GUI_images\home_page.png)
+![Strona startowa aplikacji.](evaluation/GUI_images/home_page.png)
 
 ## Ekran ładowania odpowiedzi
 
-![Ekran ładowania odpowiedzi.](.\evaluation\GUI_images\loading_page.png)
+![Ekran ładowania odpowiedzi.](evaluation/GUI_images/loading_page.png)
 
 ## Odpowiedzi na pytanie zadane przez użytkownika
 
-![Odpowiedzi na pytanie.](.\evaluation\GUI_images\answer_page.png)
+![Odpowiedzi na pytanie.](evaluation/GUI_images/answer_page.png)
 
-![Odpowiedzi dalsze.](.\evaluation\GUI_images\answer_page2.png)
+![Odpowiedzi dalsze.](evaluation/GUI_images/answer_page2.png)
 
 Ze zwiniętymi odpowiedziami (można rozwinąć odpowiedzi dla wybranego modelu):
 
-![Strona ze zwiniętymi odpowiedziami.](.\evaluation\GUI_images\hidden_answers.png)
+![Strona ze zwiniętymi odpowiedziami.](evaluation/GUI_images/hidden_answers.png)
 
 3 najlepsze konteksty znalezione przez algorytm Grovera:
 
-![Top 3 konteksty](.\evaluation\GUI_images\top3.png)
+![Top 3 konteksty](evaluation/GUI_images/top3.png)
 
 10 najlepszych kontekstów znalezionych przez klasyczny algorytm:
 
-![Top 10 kontekstów 1.](.\evaluation\GUI_images\top4.png)
-![Top 10 kontekstów 2.](.\evaluation\GUI_images\top8.png)
-![Top 10 kontekstów 3.](.\evaluation\GUI_images\top10.png)
+![Top 10 kontekstów 1.](evaluation/GUI_images/top4.png)
+![Top 10 kontekstów 2.](evaluation/GUI_images/top8.png)
+![Top 10 kontekstów 3.](evaluation/GUI_images/top10.png)
