@@ -162,7 +162,7 @@ Wyniki potwierdzają:
 - wyraźny spadek jakości odpowiedzi bez kontekstu (`no_context`) we wszystkich modelach,
 - najwyższe cosine_similarity do oczekiwanych opdowiedzi przy 3 kontekstach i modelu llama-3-8b,
 - mixtral-8x7b najszybciej generuje odpowiedzi, a llama najwolniej,
-- czas selekcji 3 kontekstów za pomocą algorytmu Grovera jest niewiele wyższy, niż przy wyborze 1 kontekstu za pomocą tego algorytmu, a modele na podstawie 3 kontekstów generują lepsze odpowiedzi (bliższe do oczekiwanycg).
+- czas selekcji 3 kontekstów za pomocą algorytmu Grovera jest niewiele wyższy, niż przy wyborze 1 kontekstu za pomocą tego algorytmu, a modele na podstawie 3 kontekstów generują lepsze odpowiedzi (bliższe do oczekiwanych).
 
 
 # Sprawdzenie działania GUI
