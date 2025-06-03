@@ -147,7 +147,7 @@ Powodem było (prawdopodobnie) to, że żaden z kandydatów (kontekstów) nie pr
 
 
 
-![Średnie wartości cosine similarity.](evaluation/results_images/cosine_summary_table.png)
+![Średnie wartości cosine similarity.](evaluation/results_images/cosine_summary_table2.png)
 
 Wykres wartości średnich cosine_similarity do "idealnych" odpowiedzi:
 ![Wykres wartości średnich cosine_similarity2 do "idealnych" odpowiedzi.](evaluation/results_images/cosine_summary_plot2.png)
