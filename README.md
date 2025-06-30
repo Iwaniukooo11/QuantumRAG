@@ -81,6 +81,3 @@ Interactive interface features:
 | **Answers**        | ![Answers](tests/evaluation/GUI_images/answer_page2.png) |
 | **Top Contexts**   | ![Contexts](tests/evaluation/GUI_images/top3.png) |
 
----
-
-## Repository Structure  
